@@ -65,9 +65,29 @@ namespace StringManipulation
                 case '3': // count the vowels using the Contains method
                     int vowelsCounter = 0;
                     enteredString.ToLower();
-                    if (enteredString.Contains("a") || enteredString.Contains("e") || enteredString.Contains("i") || enteredString.Contains("o") || enteredString.Contains("u"))
+                    charString = enteredString.ToCharArray();
+                    for (int x = 0; x < enteredString.Length; x++)
                     {
-                        vowelsCounter++;
+                        if (charString[x] is 'a')
+                        {
+                            vowelsCounter++;
+                        }
+                        else if (charString[x] is 'e')
+                        {
+                            vowelsCounter++;
+                        }
+                        else if (charString[x] is 'i')
+                        {
+                            vowelsCounter++;
+                        }
+                        else if (charString[x] is 'o')
+                        {
+                            vowelsCounter++;
+                        }
+                        else if (charString[x] is 'u')
+                        {
+                            vowelsCounter++;
+                        }
                     }
                     Console.WriteLine("Your string has {0} vowels.", vowelsCounter);
 
@@ -77,9 +97,14 @@ namespace StringManipulation
 
                 case '4': // count the number of words by counting the white spaces between them
                     int counter = 1, i = 0;
-                    while (i <= enteredString.Length)
+                    charString = enteredString.ToCharArray();
+                    while (i < enteredString.Length)
                     {
-                        if (enteredString[i] == ' ' || enteredString[i] == '\n' || enteredString[i] == '\t')
+                        if (charString[i] == ' ')
+                        {
+                            counter++;
+                        }
+                        else if (charString[i] == '\t')
                         {
                             counter++;
                         }
